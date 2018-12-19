@@ -15,6 +15,57 @@ private static bool IsValidRepository(string repositoryPath)
     }
     return isValid;
 }
+private static bool IsValidRepository(string repositoryPath)
+{
+    bool isValid = true;
+    try
+    {
+        repository = SVNRepositoryFactory.Create(new SVNURL(repositoryPath));
+
+        // Check the repository connection. 
+        // If there is a problem, this method will throw an exception
+        repository.TestConnection();
+    }
+    catch
+    {
+        isValid = false;
+    }
+    return isValid;
+}
+private static bool IsValidRepository(string repositoryPath)
+{
+    bool isValid = true;
+    try
+    {
+        repository = SVNRepositoryFactory.Create(new SVNURL(repositoryPath));
+
+        // Check the repository connection. 
+        // If there is a problem, this method will throw an exception
+        repository.TestConnection();
+    }
+    catch
+    {
+        isValid = false;
+    }
+    return isValid;
+}
+private static bool IsValidRepository(string repositoryPath)
+{
+    bool isValid = true;
+    try
+    {
+        repository = SVNRepositoryFactory.Create(new SVNURL(repositoryPath));
+
+        // Check the repository connection. 
+        // If there is a problem, this method will throw an exception
+        repository.TestConnection();
+    }
+    catch
+    {
+        isValid = false;
+    }
+    return isValid;
+}
 
 public static void Main()
 {
