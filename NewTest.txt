@@ -1,0 +1,24 @@
+using (var repo = new Repository(RepositoryPath))
+{
+    // Stage the file
+    Commands.Stage(repo, "*");
+
+    // Create the committer's signature and commit
+    Signature author = new Signature("translator", "example.com", DateTime.Now);
+    Signature committer = author;
+
+    // Commit to the repository
+    Commit commit = repo.Commit($"Resx files updated {DateTime.Now}", author, committer);
+
+    Remote remote = repo.Network.Remotes["origin"];
+    var options = new PushOptions
+    {
+        CredentialsProvider = (_url, _user, _cred) =>
+           new UsernamePasswordCredentials
+           {
+               Username = _settings.GitUserName,
+               Password = _settings.GitPassword
+           }
+     };
+     repo.Network.Push(remote, @"refs/heads/master", options);
+ } 
