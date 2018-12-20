@@ -1,0 +1,11 @@
+cd /C/SvnToGit/GitRepo
+mkdir CTI-Server_Service_Aggreate_Repo
+cd /C/SvnToGit/GitRepo/CTI-Server_Service_Aggreate_Repo
+git init
+git remote add necsdkwrapper  <Lacalgitrepositorpath1>
+git remote add Spok_CTI_Server_Service  <Lacalgitrepositorpath1>
+git remote add spok_xml_serializer  <Lacalgitrepositorpath1>
+
+$git pull --allow-unrelated-histories necsdkwrapper master
+$git pull --allow-unrelated-histories Spok_CTI_Server_Service master
+$git pull --allow-unrelated-histories spok_xml_serializer master
